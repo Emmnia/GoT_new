@@ -31,8 +31,6 @@ function findCharacterIndexById(id) {
     return -1;
 }
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
-
 app.get("/api/characters", function (_, res) {
     res.send(characters);
 });
