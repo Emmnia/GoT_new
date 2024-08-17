@@ -31,21 +31,8 @@ function findCharacterIndexById(id) {
     return -1;
 }
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
-
-app.get("/api/characters", function (_, res) {
+app.get("/", function (_, res) {
     res.send(characters);
-});
-
-// получение одного персонажа по id
-app.get("/api/characters/:id", function (req, res) {
-    const id = req.params.id;
-    const index = findCharacterIndexById(id);
-    if (index > -1) {
-        res.send(characters[index]);
-    } else {
-        res.status(404).send("Character not found");
-    }
 });
 
 app.listen(3000, function () {
