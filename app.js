@@ -31,6 +31,8 @@ function findCharacterIndexById(id) {
     return -1;
 }
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
 app.get("/api/characters", function (_, res) {
     res.send(characters);
 });
@@ -49,3 +51,5 @@ app.get("/api/characters/:id", function (req, res) {
 app.listen(3000, function () {
     console.log("Сервер ожидает подключения...");
 });
+
+module.exports = app;
