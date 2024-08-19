@@ -73,7 +73,7 @@ function autocomplete(inp, arr) {
 
 let names = [];
 
-fetch("http://localhost:3000/api/characters")
+fetch("https://go-t-new.vercel.app/")
   .then((res) => res.json())
   .then((characters) => {
     characters.forEach((character) => {
@@ -96,7 +96,7 @@ const renderCard = () => {
   cardContainer.style.backgroundPosition = "center center";
   cardContainer.style.backgroundRepeat = "no-repeat";
 
-  fetch("http://localhost:3000/api/characters")
+  fetch("https://go-t-new.vercel.app/")
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -171,7 +171,7 @@ myInput.addEventListener("focus", () => {
 const randomButton = document.getElementById("random");
 
 const showSoul = () => {
-  fetch("http://localhost:3000/api/characters")
+  fetch("https://go-t-new.vercel.app/")
     .then(response => response.json().then(array => {
       let randomItem = array[Math.floor(Math.random() * array.length)]
 
