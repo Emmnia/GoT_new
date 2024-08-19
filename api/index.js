@@ -31,7 +31,7 @@ function findCharacterIndexById(id) {
     return -1;
 }
 
-app.get("/api", function (_, res) {
+app.get("/", function (_, res) {
     res.send(characters);
 });
 
