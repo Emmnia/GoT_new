@@ -73,7 +73,7 @@ function autocomplete(inp, arr) {
 
 let names = [];
 
-fetch("https://go-t-new.vercel.app/")
+fetch(".api/data.json")
   .then((res) => res.json())
   .then((characters) => {
     characters.forEach((character) => {
@@ -91,12 +91,12 @@ const renderCard = () => {
   loader.classList.add("display");
 
   //Set the initial background image
-  cardContainer.style.backgroundImage = "url('/public/images/iron-throne.jpg')";
+  cardContainer.style.backgroundImage = "url('./images/iron-throne.jpg')";
   cardContainer.style.backgroundSize = "cover";
   cardContainer.style.backgroundPosition = "center center";
   cardContainer.style.backgroundRepeat = "no-repeat";
 
-  fetch("https://go-t-new.vercel.app/")
+  fetch(".api/data.json")
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -143,7 +143,7 @@ const renderCard = () => {
         <div class="character-not-found-container">
         <p class="character-not-found">"Что мертво, умереть не может"</p>
         </div>`;
-        cardContainer.style.backgroundImage = "url('/public/images/crown.jpg')";
+        cardContainer.style.backgroundImage = "url('./images/crown.jpg')";
         cardContainer.style.backgroundSize = "cover";
         cardContainer.style.backgroundPosition = "center center";
         cardContainer.style.backgroundRepeat = "no-repeat";
@@ -171,7 +171,7 @@ myInput.addEventListener("focus", () => {
 const randomButton = document.getElementById("random");
 
 const showSoul = () => {
-  fetch("https://go-t-new.vercel.app/")
+  fetch(".api/data.json")
     .then(response => response.json().then(array => {
       let randomItem = array[Math.floor(Math.random() * array.length)]
 
